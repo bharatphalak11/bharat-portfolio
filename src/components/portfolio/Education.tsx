@@ -59,15 +59,6 @@ export const Education = () => {
             </div>
           ))}
         </div>
-
-        {/* Learning Focus */}
-        <div className="mt-16 text-center">
-          <h3 className="text-xl font-semibold text-slate-900 mb-6">Currently Learning</h3>
-          <div className="flex justify-center gap-4">
-            <span className="bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-medium">Docker</span>
-            <span className="bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-medium">Kubernetes</span>
-          </div>
-        </div>
       </div>
     </section>
   );

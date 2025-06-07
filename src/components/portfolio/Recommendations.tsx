@@ -16,7 +16,7 @@ export const Recommendations = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   
-  // Sample recommendations data - you can replace with real data
+  // Sample recommendations data
   const recommendations: Recommendation[] = [
     {
       id: 1,
@@ -88,7 +88,7 @@ export const Recommendations = () => {
   };
 
   return (
-    <section id="recommendations" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-slate-50">
+    <section id="recommendations" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16">
@@ -100,7 +100,7 @@ export const Recommendations = () => {
           </h2>
           <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto px-4">
             I start every project with a quick discovery call to understand your goals and recommend the best tech 
-            solution. Here's what clients and coworkers say about working with me as a Python Django developer.
+            solution. Here's what clients and coworkers say about working with me as a Software Engineer.
           </p>
         </div>
 
@@ -109,22 +109,22 @@ export const Recommendations = () => {
           {/* Navigation Arrows */}
           <button
             onClick={goToPrevious}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg rounded-full p-3 transition-all duration-300 hover:scale-110 border border-slate-200"
+            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-2 sm:p-3 transition-all duration-300 hover:shadow-xl border border-slate-200 hover:bg-slate-50"
           >
-            <ChevronLeft className="w-5 h-5 text-slate-600" />
+            <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 text-slate-600" />
           </button>
           
           <button
             onClick={goToNext}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg rounded-full p-3 transition-all duration-300 hover:scale-110 border border-slate-200"
+            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-2 sm:p-3 transition-all duration-300 hover:shadow-xl border border-slate-200 hover:bg-slate-50"
           >
-            <ChevronRight className="w-5 h-5 text-slate-600" />
+            <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-slate-600" />
           </button>
 
           {/* Scrollable Container */}
           <div
             ref={scrollContainerRef}
-            className="flex overflow-x-auto scrollbar-hide snap-x snap-mandatory scroll-smooth"
+            className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {recommendations.map((recommendation, index) => (
@@ -132,15 +132,9 @@ export const Recommendations = () => {
                 key={recommendation.id}
                 className="w-full flex-none snap-start px-4"
               >
-                <div className="bg-gradient-to-br from-green-400 to-green-600 rounded-3xl p-8 sm:p-12 text-white shadow-2xl hover:shadow-3xl transition-all duration-300 relative overflow-hidden">
-                  {/* Background Pattern */}
-                  <div className="absolute inset-0 opacity-10">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full -translate-y-16 translate-x-16"></div>
-                    <div className="absolute bottom-0 left-0 w-24 h-24 bg-white rounded-full translate-y-12 -translate-x-12"></div>
-                  </div>
-
+                <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-md transition-all duration-300 relative">
                   {/* Content */}
-                  <div className="relative z-10">
+                  <div className="relative">
                     {/* Profile Section */}
                     <div className="flex items-start justify-between mb-6">
                       <div className="flex items-center space-x-4">
@@ -148,17 +142,17 @@ export const Recommendations = () => {
                           <img
                             src={recommendation.image}
                             alt={recommendation.name}
-                            className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover border-4 border-white/30"
+                            className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover border-2 border-slate-200"
                           />
                         </div>
                         <div>
-                          <h3 className="text-xl sm:text-2xl font-bold text-white mb-1">
+                          <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-1">
                             {recommendation.name}
                           </h3>
-                          <p className="text-green-100 text-sm sm:text-base font-medium">
+                          <p className="text-slate-600 text-sm sm:text-base font-medium">
                             {recommendation.role}
                           </p>
-                          <p className="text-green-200 text-xs sm:text-sm">
+                          <p className="text-slate-500 text-xs sm:text-sm">
                             {recommendation.company}
                           </p>
                         </div>
@@ -169,20 +163,20 @@ export const Recommendations = () => {
                           href={recommendation.linkedinUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="bg-white/20 hover:bg-white/30 p-2 rounded-full transition-colors duration-300"
+                          className="bg-blue-600 hover:bg-blue-700 p-2 rounded-full transition-colors duration-300"
                         >
-                          <Linkedin className="w-5 h-5 text-white" />
+                          <Linkedin className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                         </a>
                       )}
                     </div>
 
                     {/* Quote */}
                     <div className="relative">
-                      <div className="text-4xl sm:text-6xl text-white/30 font-serif absolute -top-4 -left-2">"</div>
-                      <p className="text-base sm:text-lg leading-relaxed text-white/95 pl-8">
+                      <div className="text-3xl sm:text-4xl text-slate-300 font-serif absolute -top-2 -left-1">"</div>
+                      <p className="text-sm sm:text-base leading-relaxed text-slate-700 pl-6 sm:pl-8">
                         {recommendation.content}
                       </p>
-                      <div className="text-4xl sm:text-6xl text-white/30 font-serif absolute -bottom-8 right-0">"</div>
+                      <div className="text-3xl sm:text-4xl text-slate-300 font-serif absolute -bottom-4 right-0">"</div>
                     </div>
                   </div>
                 </div>
@@ -191,14 +185,14 @@ export const Recommendations = () => {
           </div>
 
           {/* Indicators */}
-          <div className="flex justify-center mt-8 space-x-2">
+          <div className="flex justify-center mt-6 sm:mt-8 space-x-2">
             {recommendations.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
                   index === currentIndex
-                    ? 'bg-green-500 scale-125'
+                    ? 'bg-blue-600 scale-125'
                     : 'bg-slate-300 hover:bg-slate-400'
                 }`}
               />
@@ -206,12 +200,6 @@ export const Recommendations = () => {
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-      `}</style>
     </section>
   );
 };
