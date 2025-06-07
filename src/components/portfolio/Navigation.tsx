@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 
 export const Navigation = () => {
@@ -13,6 +12,7 @@ export const Navigation = () => {
     { id: "projects", label: "Projects" },
     { id: "skills", label: "Skills" },
     { id: "education", label: "Education" },
+    { id: "recommendations", label: "Recommendations" },
     { id: "contact", label: "Contact" },
   ];
 
