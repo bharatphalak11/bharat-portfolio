@@ -1,122 +1,83 @@
 
 export const Experience = () => {
   return (
-    <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 to-blue-50">
+    <section id="experience" className="py-24 px-6 lg:px-8 bg-white">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-800 mb-4">
-            Professional Experience
+          <span className="text-blue-600 font-medium text-sm uppercase tracking-wide mb-4 block">Experience</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+            Professional Journey
           </h2>
-          <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             Building scalable backend systems and leading development teams
           </p>
         </div>
 
-        {/* Experience Timeline */}
-        <div className="relative">
-          {/* Timeline Line */}
-          <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 h-full w-1 bg-blue-200"></div>
-
-          {/* Experience Item */}
-          <div className="relative mb-12">
-            {/* Timeline Dot */}
-            <div className="absolute left-2 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow-lg"></div>
-            
-            {/* Experience Card */}
-            <div className="ml-12 md:ml-0 md:w-1/2 md:pr-8">
-              <div className="bg-white rounded-lg shadow-lg p-6 border border-slate-200">
-                {/* Company and Duration */}
-                <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-slate-800">TECHstile</h3>
-                    <p className="text-blue-600 font-medium">Backend Developer & Site Reliability Engineer</p>
-                    <p className="text-slate-500 text-sm">Surat, India</p>
-                  </div>
-                  <span className="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">
-                    Nov 2021 - Present
-                  </span>
-                </div>
-
-                {/* Key Responsibilities */}
-                <div className="space-y-3">
-                  <h4 className="font-semibold text-slate-800 mb-3">Key Responsibilities & Achievements:</h4>
-                  
-                  <div className="space-y-2">
-                    <div className="flex items-start">
-                      <span className="text-blue-600 mr-2 mt-1">•</span>
-                      <p className="text-slate-700 text-sm">
-                        Understanding and implementing complex requirements for business-critical features
-                      </p>
-                    </div>
-                    
-                    <div className="flex items-start">
-                      <span className="text-blue-600 mr-2 mt-1">•</span>
-                      <p className="text-slate-700 text-sm">
-                        Building scalable and robust system architectures and APIs using Python Django & REST framework
-                      </p>
-                    </div>
-                    
-                    <div className="flex items-start">
-                      <span className="text-blue-600 mr-2 mt-1">•</span>
-                      <p className="text-slate-700 text-sm">
-                        Managing server infrastructure to ensure seamless deployment and uptime
-                      </p>
-                    </div>
-                    
-                    <div className="flex items-start">
-                      <span className="text-blue-600 mr-2 mt-1">•</span>
-                      <p className="text-slate-700 text-sm">
-                        Implementing distributed locking for files and critical code using caching, ensuring data integrity
-                      </p>
-                    </div>
-                    
-                    <div className="flex items-start">
-                      <span className="text-blue-600 mr-2 mt-1">•</span>
-                      <p className="text-slate-700 text-sm">
-                        Developing dynamic PDF generation system for invoices with accuracy and customization
-                      </p>
-                    </div>
-                    
-                    <div className="flex items-start">
-                      <span className="text-blue-600 mr-2 mt-1">•</span>
-                      <p className="text-slate-700 text-sm">
-                        Designing and implementing secure file upload system for Amazon S3
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Technologies Used */}
-                <div className="mt-6">
-                  <h4 className="font-semibold text-slate-800 mb-3">Technologies Used:</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {["Python", "Django", "REST API", "MySQL", "PostgreSQL", "Redis", "RabbitMQ", "AWS", "Celery"].map((tech) => (
-                      <span key={tech} className="bg-slate-100 text-slate-700 text-xs font-medium px-2 py-1 rounded">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+        {/* Experience Card */}
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow">
+            {/* Company Header */}
+            <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-6">
+              <div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-2">TECHstile</h3>
+                <p className="text-xl text-blue-600 font-medium mb-1">Backend Developer & Site Reliability Engineer</p>
+                <p className="text-slate-500">Surat, India</p>
+              </div>
+              <div className="mt-4 md:mt-0">
+                <span className="bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium">
+                  Nov 2021 - Present
+                </span>
               </div>
             </div>
-          </div>
-        </div>
 
-        {/* Career Highlights */}
-        <div className="mt-16 grid md:grid-cols-3 gap-8">
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center border border-slate-200">
-            <div className="text-3xl font-bold text-blue-600 mb-2">100%</div>
-            <div className="text-slate-600 font-medium">Query Performance Improvement</div>
-          </div>
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center border border-slate-200">
-            <div className="text-3xl font-bold text-blue-600 mb-2">30%</div>
-            <div className="text-slate-600 font-medium">Team Productivity Increase</div>
-          </div>
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center border border-slate-200">
-            <div className="text-3xl font-bold text-blue-600 mb-2">0</div>
-            <div className="text-slate-600 font-medium">Data Loss in Migrations</div>
+            {/* Key Achievements */}
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
+              <div className="text-center p-4 bg-slate-50 rounded-xl">
+                <div className="text-2xl font-bold text-blue-600 mb-1">100%</div>
+                <div className="text-sm text-slate-600">Query Performance Boost</div>
+              </div>
+              <div className="text-center p-4 bg-slate-50 rounded-xl">
+                <div className="text-2xl font-bold text-blue-600 mb-1">30%</div>
+                <div className="text-sm text-slate-600">Team Productivity Increase</div>
+              </div>
+              <div className="text-center p-4 bg-slate-50 rounded-xl">
+                <div className="text-2xl font-bold text-blue-600 mb-1">5</div>
+                <div className="text-sm text-slate-600">Developers Mentored</div>
+              </div>
+            </div>
+
+            {/* Responsibilities */}
+            <div className="mb-8">
+              <h4 className="text-lg font-semibold text-slate-900 mb-4">Key Responsibilities:</h4>
+              <div className="grid md:grid-cols-2 gap-4">
+                {[
+                  "Building scalable system architectures using Python Django & REST framework",
+                  "Managing server infrastructure for seamless deployment and uptime",
+                  "Implementing distributed locking using caching for data integrity",
+                  "Developing dynamic PDF generation systems for invoices",
+                  "Designing secure file upload systems for Amazon S3",
+                  "Leading and mentoring a team of 5 backend developers"
+                ].map((item, index) => (
+                  <div key={index} className="flex items-start">
+                    <span className="text-blue-600 mr-3 mt-1 text-sm">▶</span>
+                    <p className="text-slate-700 text-sm">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Technologies */}
+            <div>
+              <h4 className="text-lg font-semibold text-slate-900 mb-4">Technologies Used:</h4>
+              <div className="flex flex-wrap gap-2">
+                {["Python", "Django", "REST API", "MySQL", "PostgreSQL", "Redis", "RabbitMQ", "AWS", "Celery"].map((tech) => (
+                  <span key={tech} className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>

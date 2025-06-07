@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 
 export const Navigation = () => {
   const [activeSection, setActiveSection] = useState("hero");
+  const [isScrolled, setIsScrolled] = useState(false);
 
   // Navigation items with their corresponding section IDs
   const navItems = [
@@ -23,15 +24,18 @@ export const Navigation = () => {
     }
   };
 
-  // Track active section on scroll
+  // Track active section and scroll position
   useEffect(() => {
     const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setIsScrolled(scrollPosition > 50);
+
       const sections = navItems.map(item => document.getElementById(item.id));
-      const scrollPosition = window.scrollY + 100;
+      const currentScrollPosition = scrollPosition + 100;
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = sections[i];
-        if (section && section.offsetTop <= scrollPosition) {
+        if (section && section.offsetTop <= currentScrollPosition) {
           setActiveSection(navItems[i].id);
           break;
         }
@@ -43,37 +47,51 @@ export const Navigation = () => {
   }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm' : 'bg-transparent'
+    }`}>
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="flex justify-between items-center h-20">
           {/* Logo/Name */}
           <div className="flex-shrink-0">
-            <h1 className="text-xl font-bold text-slate-800">Bharat Phalak</h1>
+            <button 
+              onClick={() => scrollToSection('hero')}
+              className="text-2xl font-bold text-slate-900 hover:text-blue-600 transition-colors"
+            >
+              Bharat Phalak
+            </button>
           </div>
 
           {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            {navItems.slice(1).map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className={`text-sm font-medium transition-colors duration-200 ${
+                  activeSection === item.id
+                    ? "text-blue-600"
+                    : "text-slate-700 hover:text-blue-600"
+                }`}
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
+
+          {/* CTA Button */}
           <div className="hidden md:block">
-            <div className="flex space-x-8">
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-                    activeSection === item.id
-                      ? "text-blue-600 bg-blue-50"
-                      : "text-slate-700 hover:text-blue-600 hover:bg-slate-50"
-                  }`}
-                >
-                  {item.label}
-                </button>
-              ))}
-            </div>
+            <button
+              onClick={() => scrollToSection('contact')}
+              className="bg-blue-600 text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition-colors"
+            >
+              Let's Talk
+            </button>
           </div>
 
           {/* Mobile Navigation Button */}
           <div className="md:hidden">
             <button className="text-slate-700 hover:text-blue-600">
-              <span className="sr-only">Open menu</span>
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>

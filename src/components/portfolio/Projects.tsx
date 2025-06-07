@@ -1,57 +1,53 @@
 
 export const Projects = () => {
-  // Project data array for easy management
   const projects = [
     {
       title: "Notification System",
       duration: "Jan 2024 - Mar 2024",
-      description: "Built a scalable, independent notification system supporting multiple channels (Telegram, WhatsApp, email, In-ERP notifications) with 100% reliability to prevent cascading failures.",
-      technologies: ["Celery", "RabbitMQ", "AWS (EC2, S3)", "SSE Stream", "Telebot", "MessageBird", "Redis", "MySQL"],
+      description: "Built a scalable, independent notification system supporting multiple channels with 100% reliability.",
+      technologies: ["Celery", "RabbitMQ", "AWS", "SSE Stream", "Telebot", "MessageBird", "Redis", "MySQL"],
       achievements: [
-        "Developed trigger management screen for seamless ERP integration",
+        "Developed trigger management for seamless ERP integration",
         "Built robust billing mechanism based on daily usage",
-        "Configured Uwsgi and Asgi servers for real-time SSE stream delivery",
+        "Configured Uwsgi and Asgi servers for real-time delivery",
         "Achieved 100% notification delivery reliability"
-      ],
-      type: "Backend System"
+      ]
     },
     {
-      title: "Capture Async Failed Task System",
+      title: "Async Task Recovery System",
       duration: "May 2022 - July 2022",
-      description: "Developed a comprehensive system to capture, log, and automatically retry failed Celery asynchronous tasks, significantly improving system reliability and debugging capabilities.",
+      description: "Developed a comprehensive system to capture, log, and retry failed Celery tasks automatically.",
       technologies: ["Django", "Celery", "RabbitMQ", "MySQL"],
       achievements: [
-        "Captured detailed failure information including exceptions and tracebacks",
+        "Captured detailed failure information and tracebacks",
         "Enabled rapid debugging with clear task failure traces",
-        "Implemented automated rerun mechanism for failed tasks",
+        "Implemented automated rerun mechanism",
         "Enhanced overall system reliability and performance"
-      ],
-      type: "Error Handling"
+      ]
     },
     {
-      title: "Milk Distributor Application",
+      title: "Milk Distributor App",
       duration: "May 2021 - Oct 2021",
-      description: "Developed a comprehensive Android application for large milk distributors to enhance customer relationships and streamline business operations through mobile technology.",
+      description: "Developed a comprehensive Android application for large milk distributors.",
       technologies: ["Django", "PostgreSQL", "Firebase", "Flutter", "Heroku"],
       achievements: [
-        "Implemented customer service and product management modules",
+        "Implemented customer service and product management",
         "Built order processing and online billing systems",
-        "Improved customer satisfaction through user-friendly interface",
+        "Improved customer satisfaction with user-friendly interface",
         "Designed for high-volume transaction handling"
-      ],
-      type: "Mobile Application"
+      ]
     }
   ];
 
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section id="projects" className="py-24 px-6 lg:px-8 bg-slate-50">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-800 mb-4">
-            Key Projects
+          <span className="text-blue-600 font-medium text-sm uppercase tracking-wide mb-4 block">Projects</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+            Featured Work
           </h2>
-          <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             Innovative solutions that demonstrate technical expertise and problem-solving capabilities
           </p>
@@ -60,68 +56,48 @@ export const Projects = () => {
         {/* Projects Grid */}
         <div className="space-y-8">
           {projects.map((project, index) => (
-            <div key={index} className="bg-gradient-to-r from-slate-50 to-blue-50 rounded-lg shadow-lg border border-slate-200 overflow-hidden">
-              <div className="p-8">
-                {/* Project Header */}
-                <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-6">
-                  <div className="mb-4 md:mb-0">
-                    <h3 className="text-2xl font-bold text-slate-800 mb-2">{project.title}</h3>
-                    <div className="flex items-center space-x-4">
-                      <span className="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">
-                        {project.duration}
-                      </span>
-                      <span className="bg-slate-100 text-slate-700 text-sm font-medium px-3 py-1 rounded-full">
-                        {project.type}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Project Description */}
-                <p className="text-slate-700 mb-6 leading-relaxed">
-                  {project.description}
-                </p>
-
-                {/* Project Achievements */}
-                <div className="mb-6">
-                  <h4 className="font-semibold text-slate-800 mb-3">Key Achievements:</h4>
-                  <div className="grid md:grid-cols-2 gap-2">
-                    {project.achievements.map((achievement, achIndex) => (
-                      <div key={achIndex} className="flex items-start">
-                        <span className="text-blue-600 mr-2 mt-1">✓</span>
-                        <p className="text-slate-700 text-sm">{achievement}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Technologies Used */}
+            <div key={index} className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300">
+              {/* Project Header */}
+              <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-6">
                 <div>
-                  <h4 className="font-semibold text-slate-800 mb-3">Technologies Used:</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech, techIndex) => (
-                      <span key={techIndex} className="bg-white text-slate-700 text-sm font-medium px-3 py-1 rounded-md border border-slate-200 shadow-sm">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-2">{project.title}</h3>
+                  <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium">
+                    {project.duration}
+                  </span>
+                </div>
+              </div>
+
+              {/* Project Description */}
+              <p className="text-slate-600 mb-6 leading-relaxed text-lg">
+                {project.description}
+              </p>
+
+              {/* Achievements */}
+              <div className="mb-6">
+                <h4 className="font-semibold text-slate-900 mb-3">Key Achievements:</h4>
+                <div className="grid md:grid-cols-2 gap-3">
+                  {project.achievements.map((achievement, achIndex) => (
+                    <div key={achIndex} className="flex items-start">
+                      <span className="text-blue-600 mr-3 mt-1">✓</span>
+                      <p className="text-slate-700 text-sm">{achievement}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Technologies */}
+              <div>
+                <h4 className="font-semibold text-slate-900 mb-3">Technologies:</h4>
+                <div className="flex flex-wrap gap-2">
+                  {project.technologies.map((tech, techIndex) => (
+                    <span key={techIndex} className="bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-sm font-medium">
+                      {tech}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Call to Action */}
-        <div className="text-center mt-12">
-          <p className="text-slate-600 mb-6">
-            Interested in learning more about these projects or discussing new opportunities?
-          </p>
-          <button 
-            onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-            className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-8 py-3 rounded-lg transition-colors duration-200"
-          >
-            Let's Connect
-          </button>
         </div>
       </div>
     </section>
