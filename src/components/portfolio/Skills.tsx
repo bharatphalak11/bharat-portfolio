@@ -50,24 +50,6 @@ export const Skills = () => {
     }
   };
 
-  const additionalVariants = {
-    hidden: { 
-      opacity: 0,
-      height: 0,
-      transition: {
-        duration: 0.3
-      }
-    },
-    visible: { 
-      opacity: 1,
-      height: "auto",
-      transition: {
-        duration: 0.5,
-        staggerChildren: 0.1
-      }
-    }
-  };
-
   return (
     <section id="skills" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-6xl mx-auto">
@@ -88,7 +70,7 @@ export const Skills = () => {
           </p>
         </motion.div>
 
-        {/* Core Skills Grid */}
+        {/* Core Skills Grid - Always Visible */}
         <motion.div 
           className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4 md:gap-6 mb-8"
           variants={containerVariants}
@@ -98,7 +80,7 @@ export const Skills = () => {
         >
           {coreSkills.map((skill, index) => (
             <motion.div 
-              key={index} 
+              key={skill.name} 
               className="bg-slate-50 rounded-xl p-3 sm:p-4 hover:bg-slate-100 hover:shadow-md transition-all duration-300 text-center group cursor-pointer"
               variants={itemVariants}
               whileHover={{ scale: 1.05, y: -3 }}
@@ -116,19 +98,21 @@ export const Skills = () => {
         <AnimatePresence>
           {showAllSkills && (
             <motion.div
-              variants={additionalVariants}
-              initial="hidden"
-              animate="visible"
-              exit="hidden"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
               className="overflow-hidden"
             >
               <motion.div 
                 className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4 md:gap-6 mb-8"
+                initial="hidden"
+                animate="visible"
                 variants={containerVariants}
               >
                 {additionalSkills.map((skill, index) => (
                   <motion.div 
-                    key={index} 
+                    key={skill.name} 
                     className="bg-slate-50 rounded-xl p-3 sm:p-4 hover:bg-slate-100 hover:shadow-md transition-all duration-300 text-center group cursor-pointer"
                     variants={itemVariants}
                     whileHover={{ scale: 1.05, y: -3 }}

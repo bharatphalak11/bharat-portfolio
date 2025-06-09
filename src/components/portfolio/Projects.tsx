@@ -68,24 +68,6 @@ export const Projects = () => {
     }
   };
 
-  const additionalVariants = {
-    hidden: { 
-      opacity: 0,
-      height: 0,
-      transition: {
-        duration: 0.3
-      }
-    },
-    visible: { 
-      opacity: 1,
-      height: "auto",
-      transition: {
-        duration: 0.5,
-        staggerChildren: 0.2
-      }
-    }
-  };
-
   const ProjectCard = ({ project, index }: { project: any, index: number }) => (
     <motion.div 
       className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300"
@@ -170,7 +152,7 @@ export const Projects = () => {
           </p>
         </motion.div>
 
-        {/* Featured Projects */}
+        {/* Featured Projects - Always Visible */}
         <motion.div 
           className="space-y-8 mb-8"
           variants={containerVariants}
@@ -179,7 +161,7 @@ export const Projects = () => {
           viewport={{ once: true }}
         >
           {featuredProjects.map((project, index) => (
-            <ProjectCard key={index} project={project} index={index} />
+            <ProjectCard key={project.title} project={project} index={index} />
           ))}
         </motion.div>
 
@@ -187,18 +169,20 @@ export const Projects = () => {
         <AnimatePresence>
           {showAllProjects && (
             <motion.div
-              variants={additionalVariants}
-              initial="hidden"
-              animate="visible"
-              exit="hidden"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
               className="overflow-hidden"
             >
               <motion.div 
                 className="space-y-8 mb-8"
+                initial="hidden"
+                animate="visible"
                 variants={containerVariants}
               >
                 {additionalProjects.map((project, index) => (
-                  <ProjectCard key={`additional-${index}`} project={project} index={index} />
+                  <ProjectCard key={project.title} project={project} index={index} />
                 ))}
               </motion.div>
             </motion.div>
