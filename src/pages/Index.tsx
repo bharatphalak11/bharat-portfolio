@@ -1,7 +1,6 @@
 
 import { Hero } from "@/components/portfolio/Hero";
 import { About } from "@/components/portfolio/About";
-import { WorkHighlights } from "@/components/portfolio/WorkHighlights";
 import { Experience } from "@/components/portfolio/Experience";
 import { Projects } from "@/components/portfolio/Projects";
 import { Skills } from "@/components/portfolio/Skills";
@@ -12,7 +11,7 @@ import { Navigation } from "@/components/portfolio/Navigation";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-white">
       {/* Fixed Navigation */}
       <Navigation />
       
@@ -23,9 +22,6 @@ const Index = () => {
         
         {/* About Section */}
         <About />
-        
-        {/* Work Highlights Section */}
-        <WorkHighlights />
         
         {/* Experience Section */}
         <Experience />
