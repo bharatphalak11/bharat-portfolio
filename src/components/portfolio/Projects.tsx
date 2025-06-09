@@ -1,11 +1,8 @@
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 export const Projects = () => {
-  const [showAllProjects, setShowAllProjects] = useState(false);
-
-  const featuredProjects = [
+  const allProjects = [
     {
       title: "Notification System",
       duration: "Jan 2024 - Mar 2024",
@@ -29,10 +26,7 @@ export const Projects = () => {
         "Implemented automated rerun mechanism",
         "Enhanced overall system reliability and performance"
       ]
-    }
-  ];
-
-  const additionalProjects = [
+    },
     {
       title: "Milk Distributor App",
       duration: "May 2021 - Oct 2021",
@@ -152,54 +146,18 @@ export const Projects = () => {
           </p>
         </motion.div>
 
-        {/* Featured Projects - Always Visible */}
+        {/* All Projects */}
         <motion.div 
-          className="space-y-8 mb-8"
+          className="space-y-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {featuredProjects.map((project, index) => (
+          {allProjects.map((project, index) => (
             <ProjectCard key={project.title} project={project} index={index} />
           ))}
         </motion.div>
-
-        {/* Additional Projects (Expandable) */}
-        <AnimatePresence>
-          {showAllProjects && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.4, ease: "easeInOut" }}
-              className="overflow-hidden"
-            >
-              <motion.div 
-                className="space-y-8 mb-8"
-                initial="hidden"
-                animate="visible"
-                variants={containerVariants}
-              >
-                {additionalProjects.map((project, index) => (
-                  <ProjectCard key={project.title} project={project} index={index} />
-                ))}
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        {/* View More Button */}
-        <div className="text-center">
-          <motion.button
-            onClick={() => setShowAllProjects(!showAllProjects)}
-            className="bg-blue-600 text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            {showAllProjects ? "Show Less" : "View More Projects"}
-          </motion.button>
-        </div>
       </div>
     </section>
   );
