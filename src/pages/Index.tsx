@@ -1,6 +1,7 @@
 
 import { Hero } from "@/components/portfolio/Hero";
 import { About } from "@/components/portfolio/About";
+import { WorkHighlights } from "@/components/portfolio/WorkHighlights";
 import { Experience } from "@/components/portfolio/Experience";
 import { Projects } from "@/components/portfolio/Projects";
 import { Skills } from "@/components/portfolio/Skills";
@@ -22,6 +23,9 @@ const Index = () => {
         
         {/* About Section */}
         <About />
+        
+        {/* Work Highlights Section */}
+        <WorkHighlights />
         
         {/* Experience Section */}
         <Experience />
