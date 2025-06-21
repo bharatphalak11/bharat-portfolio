@@ -7,26 +7,26 @@ export const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "bharat.phalak@example.com",
-      href: "mailto:bharat.phalak@example.com"
+      value: "bharatphalak11@gmail.com",
+      href: "mailto:bharatphalak11@gmail.com"
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+91-XXXXX-XXXXX",
-      href: "tel:+91XXXXXXXXX"
+      value: "+918821039181",
+      href: "tel:+918821039181"
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
       value: "linkedin.com/in/bharatphalak",
-      href: "https://linkedin.com/in/bharatphalak"
+      href: "https://linkedin.com/in/bharat-phalak-882103"
     },
     {
       icon: Github,
       label: "GitHub",
       value: "github.com/bharatphalak",
-      href: "https://github.com/bharatphalak"
+      href: "https://github.com/bharatphalak11"
     }
   ];
 
@@ -74,7 +74,7 @@ export const Contact = () => {
 
             <div className="flex items-center space-x-2 text-slate-300">
               <MapPin className="w-5 h-5" />
-              <span>Surat, India</span>
+              <span>Surat, Gujarat, India</span>
             </div>
           </div>
 
@@ -84,7 +84,7 @@ export const Contact = () => {
             
             <p className="text-slate-300 mb-8 leading-relaxed">
               I'm currently open to new opportunities and exciting projects. 
-              Let's discuss how my backend development expertise can help bring your ideas to life.
+              Let's discuss how my development expertise can help bring your ideas to life.
             </p>
 
             <div className="space-y-4 mb-8">
@@ -120,7 +120,7 @@ export const Contact = () => {
         {/* Footer */}
         <div className="mt-16 pt-8 border-t border-slate-700 text-center">
           <p className="text-slate-400">
-            © 2024 Bharat Phalak. Built with React, TypeScript, and Tailwind CSS.
+            © Bharat Phalak
           </p>
         </div>
       </div>

@@ -56,9 +56,14 @@ export const Navigation = () => {
           <div className="flex-shrink-0">
             <button 
               onClick={() => scrollToSection('hero')}
-              className="text-2xl font-bold text-slate-900 hover:text-blue-600 transition-colors"
+              className="flex items-center gap-2 text-2xl font-bold text-slate-900 hover:text-blue-600 transition-colors"
             >
-              Bharat Phalak
+              <img 
+                src="/public/bp-latest.png"
+                alt="Logo"
+                className="h-8 w-8 object-contain"
+              />
+              <span>Bharat Phalak</span>
             </button>
           </div>
 
