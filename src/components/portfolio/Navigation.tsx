@@ -59,7 +59,7 @@ export const Navigation = () => {
               className="flex items-center gap-2 text-2xl font-bold text-slate-900 hover:text-blue-600 transition-colors"
             >
               <img 
-                src="/public/bp-latest-logo.png"
+                src="/bp-latest-logo.png"
                 alt="Logo"
                 className="h-8 w-8 object-contain"
               />
