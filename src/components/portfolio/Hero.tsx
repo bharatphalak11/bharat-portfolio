@@ -29,7 +29,24 @@ export const Hero = () => {
         {/* Greeting */}
         <div className="mb-6">
           <span className="inline-block bg-blue-50 text-blue-600 px-4 py-2 rounded-full text-sm font-medium mb-4">
-            👋 Hello, I'm Bharat
+            <motion.span
+              animate={{
+                rotate: [0, 14, -8, 14, -4, 10, 0], // Waving motion
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                repeatType: 'loop',
+              }}
+              style={{ 
+                display: 'inline-block', 
+                transformOrigin: '70% 70%',
+                fontSize: '1.4rem',
+              }}
+            >
+              👋
+            </motion.span>{' '}
+            <b>Hello, I'm Bharat</b>
           </span>
         </div>
 
@@ -54,9 +71,8 @@ export const Hero = () => {
 
         {/* Description */}
         <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-12 leading-relaxed px-4">
-          Passionate about crafting scalable, high-performance backend systems with 3+ years of experience
-          in Python, Django, and distributed architectures. Dedicated to delivering robust solutions
-          and optimizing system performance.
+          Experienced software engineer with over 3+ years of expertise in Python, and backend development. 
+          Committed to building robust, high-performance solutions that drive efficiency and reliability.
         </p>
 
         {/* Call to Action Buttons */}
