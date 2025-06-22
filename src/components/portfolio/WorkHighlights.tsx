@@ -57,7 +57,7 @@ export const WorkHighlights = () => {
             Work Highlights
           </h2>
           <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto px-4">
-            Core responsibilities and expertise in backend development and system architecture
+            Specialized in backend development and designing scalable, efficient system architectures.
           </p>
         </motion.div>
 

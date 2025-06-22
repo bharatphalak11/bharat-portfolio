@@ -30,10 +30,9 @@ export const About = () => {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 viewport={{ once: true }}
               >
-                I'm a dedicated backend developer with over 3 years of hands-on experience 
-                specializing in ERP software solutions for the textile industry. My expertise 
-                lies in building robust, scalable systems using Python, Django, and modern 
-                distributed architectures.
+                Dedicated Software Engineer with over 3+ years of hands-on experience specializing
+                in ERP software solutions. Proficient in designing and implementing robust, scalable
+                systems using Python, Django, other frameworks, and modern distributed architectures.
               </motion.p>
               
               <motion.p
@@ -42,10 +41,10 @@ export const About = () => {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 viewport={{ once: true }}
               >
-                Throughout my career, I've led cross-functional teams, optimized database 
-                performance by 100%, and successfully migrated critical systems with zero 
-                data loss. I believe in writing clean, maintainable code and fostering 
-                collaborative development environments.
+                Throughout my career, I have led cross-functional teams, increased database performance, 
+                and successfully migrated critical systems with zero data loss.
+                I believe in writing clean, maintainable code and encouraging teamwork
+                and productive development environments.
               </motion.p>
               
               <motion.p
@@ -54,8 +53,9 @@ export const About = () => {
                 transition={{ duration: 0.6, delay: 0.5 }}
                 viewport={{ once: true }}
               >
-                When I'm not coding, I'm exploring new technologies like Docker and 
-                Kubernetes, or mentoring fellow developers to help them grow in their careers.
+                Outside of coding, I enjoy exploring emerging technologies such as 
+                Artificial Intelligence, MCP servers, cloud services,
+                as well as mentoring fellow developers to support their professional growth..
               </motion.p>
             </div>
           </motion.div>
@@ -74,20 +74,19 @@ export const About = () => {
                 whileHover={{ scale: 1.05, rotate: 2 }}
                 transition={{ duration: 0.3 }}
               >
-                <motion.div 
-                  className="text-6xl sm:text-8xl text-white"
+                <motion.img
+                  src="/self-image.jpg"
+                  alt="Self Image"
+                  className="w-70 sm:w-90 rounded-3xl shadow-2xl"
                   animate={{ 
                     scale: [1, 1.1, 1],
                     rotate: [0, 5, -5, 0] 
                   }}
                   transition={{ 
                     duration: 4, 
-                    repeat: Infinity, 
-                    repeatType: "reverse" 
+                    repeat: 0,
                   }}
-                >
-                  👨‍💻
-                </motion.div>
+                />
               </motion.div>
               {/* Decorative elements */}
               <motion.div 
