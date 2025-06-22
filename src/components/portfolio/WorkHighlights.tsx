@@ -5,18 +5,25 @@ export const WorkHighlights = () => {
   const highlights = [
     {
       icon: "💻",
-      title: "Python & Django Web Development",
-      description: "Build responsive, secure web applications using Django, React, and other robust frameworks. Each project is optimized for performance, scalability, and maintainability."
+      title: "Building High-Performance Applications ",
+      description: "Specialized in developing responsive and secure web applications using frameworks like \
+      Django, Flask, and FastAPI. Each project is engineered for performance, scalability, and long-term maintainability. Built end-to-end REST APIs designed to support high-demand, distributed systems."
     },
     {
       icon: "🔧",
-      title: "Backend API Development", 
-      description: "Create robust, RESTful and GraphQL APIs using Django and Python. From authentication and admin panels to data processing pipelines, your backend will be secure, tested, and scalable."
+      title: "Backend & Automation Engineering", 
+      description: "Built AI-powered automation systems, engineered task scheduling scripts, \
+      and worked extensively with data cleaning, data visualizations, and end-to-end data \
+      engineering workflows. I also design efficient ETL processes to streamline data movement \
+      and transformation ensuring your backend is not just functional, but intelligent \
+      and future-ready."
     },
     {
       icon: "☁️",
       title: "Deployment & DevOps",
-      description: "End-to-end deployment on AWS, DigitalOcean, or VPS environments with Docker, Gunicorn, and Nginx. I handle SSL certificate setup via Let's Encrypt and CI/CD pipelines for seamless updates."
+      description: "Managed end-to-end deployment of applications on AWS and Azure using \
+      Docker, Gunicorn, and Nginx for production-grade performance. I implement CI/CD pipelines \
+      to enable seamless, zero-downtime updates and ensure rapid, reliable delivery across environments."
     }
   ];
 

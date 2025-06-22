@@ -1,7 +1,7 @@
 
 export const Experience = () => {
   return (
-    <section id="experience" className="py-24 px-6 lg:px-8 bg-white">
+    <section id="experience" className="py-24 px-6 lg:px-8 bg-slate-50">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">

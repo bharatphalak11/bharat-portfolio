@@ -10,10 +10,10 @@ export const Navigation = () => {
     { id: "about", label: "About" },
     { id: "experience", label: "Experience" },
     { id: "projects", label: "Projects" },
-    { id: "skills", label: "Skills" },
+    // { id: "skills", label: "Skills" },
     { id: "education", label: "Education" },
     { id: "recommendations", label: "Recommendations" },
-    { id: "contact", label: "Contact" },
+    // { id: "contact", label: "Contact" },
   ];
 
   // Smooth scroll to section function

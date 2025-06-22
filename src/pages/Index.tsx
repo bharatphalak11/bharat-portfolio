@@ -34,7 +34,7 @@ const Index = () => {
         <Projects />
         
         {/* Skills Section */}
-        <Skills />
+        {/* <Skills /> */}
         
         {/* Education Section */}
         <Education />

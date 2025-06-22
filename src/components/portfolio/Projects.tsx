@@ -127,7 +127,7 @@ export const Projects = () => {
   );
 
   return (
-    <section id="projects" className="py-24 px-6 lg:px-8 bg-slate-50">
+    <section id="projects" className="py-24 px-6 lg:px-8 bg-white">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <motion.div 
