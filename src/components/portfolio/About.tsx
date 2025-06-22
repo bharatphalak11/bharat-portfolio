@@ -75,8 +75,9 @@ export const About = () => {
                 transition={{ duration: 0.3 }}
               >
                 <motion.img
-                  src="/self-image.jpg"
+                  src="/1743609765447.webp"
                   alt="Self Image"
+                  loading="lazy"
                   className="w-70 sm:w-90 rounded-3xl shadow-2xl"
                   animate={{ 
                     scale: [1, 1.1, 1],
