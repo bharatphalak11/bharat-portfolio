@@ -6,7 +6,7 @@ export const WorkHighlights = () => {
     {
       icon: "💻",
       title: "Building High-Performance Applications ",
-      description: "Specialized in developing responsive and secure web applications using frameworks like \
+      description: "Specialized in developing responsive and secure applications using frameworks like \
       Django, Flask, and FastAPI. Each project is engineered for performance, scalability, and long-term maintainability. Built end-to-end REST APIs designed to support high-demand, distributed systems."
     },
     {
